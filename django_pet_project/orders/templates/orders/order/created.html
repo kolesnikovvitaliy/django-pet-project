@@ -1,0 +1,13 @@
+{% extends "shop/base.html" %}
+{% load static %}
+<link rel="stylesheet" href="{% static "css/style.css" %}">
+{% block title %}
+  Спасибо за заказ
+{% endblock %}
+
+{% block content %}
+  <div class="content-section">
+    <h2>Спасибо за заказ</h2>
+    <p>Идентификатор вашего заказа: {{ order.id }}</p>
+  </div>
+{% endblock %}

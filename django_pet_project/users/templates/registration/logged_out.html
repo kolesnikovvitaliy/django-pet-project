@@ -1,0 +1,10 @@
+{% extends "shop/base.html" %}
+
+{% block content %}
+<div class="content-section">
+  <h2 class="page_title">Вы вышли из системы</h2>
+  <p class="little_message">
+    <a href="{% url 'login' %}">Войти снова</a>
+  </p>
+</div>
+{% endblock %}

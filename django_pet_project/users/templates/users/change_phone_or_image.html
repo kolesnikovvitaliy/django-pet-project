@@ -1,0 +1,29 @@
+{% extends "shop/base.html" %}
+
+{% load crispy_forms_tags %}
+{% block content %}
+  <div class="content-section">
+    <h3 class="back_button">
+      <a href="{{request.META.HTTP_REFERER}}">Назад</a>
+    </h3>
+    <h4 class="img_phone_instructions">
+      Добавьте или измените номер телефона
+    </h4>
+    <div class="profile_wrapper">
+      <div>
+        <div>
+          <h3 class="profile_username">{{ user.username }}</h3>
+        </div>
+      </div>
+      <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <fieldset class="form-group phone_img_form">
+          {{ p_form|crispy}}
+        </fieldset>
+        <div class="form-group button_section">
+          <button class="button_base blue_button" type="submit">Обновить</button>
+        </div>
+      </form>
+    </div>
+  </div>
+{% endblock content %}

@@ -1,0 +1,20 @@
+{% extends 'shop/base.html' %}
+{% load static %}
+            {% block title %}
+
+            Сообщение отправленно
+            {% endblock %}
+       
+        {% block content %}
+
+                  <h1>Ваше сообщение отправленно</h1>
+                  
+            <p> <h2>Мы рады обратной связи с вами </h2></p>     
+       
+        
+            <!-- <input type="hidden" name="image" value="{{ data.imag }}"> -->
+            <form action="{% url 'shop:home' %}">
+   
+          <button type="submit" class="btn btn-secondary" data-bs-dismiss="modal">Главная</button>
+        </form>
+        {% endblock %}

@@ -1,0 +1,29 @@
+{% extends "shop/base.html" %}
+
+{% load crispy_forms_tags %}
+
+{% block title %}
+{% endblock %}
+
+{% block content %}
+  <div class="content-section">
+    <form method="POST">
+      {% csrf_token %}
+      <fieldset class="form-group">
+        <legend>Присоеденяйтесь сегодня</legend>
+        {{ form|crispy }}
+      </fieldset>
+      <div class="form-group button_section">
+        <button class="button_base blue_button" type="submit">
+          Зарегистрироваться
+        </button>
+      </div>
+    </form>
+    <div class="req_login_section">
+      <small class="text-muted">
+        Уже есть аккаунт? <a href="{% url 'login' %}"
+                                    class="ml">Войти</a>
+      </small>
+    </div>
+  </div>
+{% endblock content%}
