@@ -1,20 +1,22 @@
 {% extends 'shop/base.html' %}
 {% load static %}
-            {% block title %}
+{% block title %}
 
-            Запрос на обратный звонок
-            {% endblock %}
-       
-        {% block content %}
+Запрос на обратный звонок
+{% endblock %}
 
-                  <h1>ЗАПРОС УСПЕШНО ОТПРАЛЕН</h1>
-                  
-            <p> <h2>ЧЕРЕЗ НЕСКОЛЬКО МИНУТ ВАМ ПЕРЕЗВОНЯТ</h2></p>     
-       
-        
-            <!-- <input type="hidden" name="image" value="{{ data.imag }}"> -->
-            <form action="{% url 'shop:home' %}">
-   
-          <button type="submit" class="btn btn-secondary" data-bs-dismiss="modal">Главная</button>
-        </form>
-        {% endblock %}
+{% block content %}
+
+<h1>ЗАПРОС УСПЕШНО ОТПРАЛЕН</h1>
+
+<p>
+<h2>ЧЕРЕЗ НЕСКОЛЬКО МИНУТ ВАМ ПЕРЕЗВОНЯТ</h2>
+</p>
+
+
+
+<form action="{% url 'shop:home' %}">
+
+  <button type="submit" class="btn btn-secondary" data-bs-dismiss="modal">Главная</button>
+</form>
+{% endblock %}

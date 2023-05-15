@@ -2,96 +2,90 @@
 {% load static %}
 
 {% block title %}
-  {% if category %} {{ category.name }} {% else %} Страница товаров {% endif %}
+{% if category %} {{ category.name }} {% else %} Страница товаров {% endif %}
 {% endblock %}
 
 {% block content %}
-  <div id="sidebar" class="col-sm-3 mx-auto">
-    <ul class="list-group list-group-horizontal-md list-group-item-danger">
-      {% for cat in categories %}
-        <li class="list-group-item" {% if category.slug == cat.slug %} class="selected" {% endif %}>
-          <a href="{{ cat.get_absolute_url }}">{{ cat.name }}</a>
-        </li>
-      {% endfor %}
-    </ul>
-  </div>
+<div id="sidebar" class="col-sm-3 mx-auto">
+  <ul class="list-group list-group-horizontal-md list-group-item-danger">
+    {% for cat in categories %}
+    <li class="list-group-item" {% if category.slug==cat.slug %} class="selected" {% endif %}>
+      <a href="{{ cat.get_absolute_url }}">{{ cat.name }}</a>
+    </li>
+    {% endfor %}
+  </ul>
+</div>
 
 <!-- КАРТОЧКА ТОВАРА -->
-  <div id="main" class="product_list col-sm-9 mx-auto">
-    <div class="col-sm-3 mx-auto">
+<div id="main" class="product_list col-sm-9 mx-auto">
+  <div class="col-sm-3 mx-auto">
     <h1>{% if category %}{{ category.name }}{% else %}Товары{% endif %}</h1>
-    </div>
-    <div class="items row">
-      {% for product in products %}
-          <div class="col-lg-4 col-sm-6 mb-3">
-              <div class="product-card">
-              <div class="product-thumb">
-                <a href="{{ product.get_absolute_url }}">
-                  <img src="{% if product.image %}{{ product.image.url }}{% else %}{% static 'images/no-image.jpeg'%}{% endif %}">
-                </a>
-              </div>
-            
-              <div class="product-details">
-                  <h4><a class="text-medium" href="{{ product.get_absolute_url }}?next={{request.path}}">
-                        {{ product.description }}
-                      </a>
-                  </h4>
-                  <p>{{ product.name }}</p>
-                  <div class="product-bottom-details d-flex justify-content-between">
-                    <a href="{{ product.get_absolute_url }}">ПОДРОБНЕЙ</a>
-                  <div class="product-price">
-                  </div> {{ product.price }} руб.
-                  <div class="product-links">
-                    
-                    
-
-                    <a href="{{ product.get_absolute_url }}">
-                      <i class="fa-solid fa-cart-shopping"></i>
-                    </a> 
-                  <!-- <i class="fa-solid fa-cart-shopping"></i></a> -->
-                  <!-- <a href="#"><i class="fa-regular fa-heart"></i></a> -->
-              </div>
-           </div>
-                  
-                      </div>
-                  </div>
-                </div>
-      {% endfor %}
-      
-
-    </div>
-  
-    <div class="pagination">
-      {% if is_paginated %}
-        {% if page_object.has_previous %}
-          <a class="first_page" href="?page=1">Первая</a>
-          <a class="prev_page" href="?page={{ page_object.previous_page_number }}">
-            <i class="fa fa-angle-double-left" aria-hidden="true"></i>
-          </a>
-        {% endif %}
-  
-        {% for num in page_object.paginator.page_range %}
-          {% if page_object.number == num %}
-            <a class="nums_page selected_page" href="?page={{ num }}">{{ num }}</a>
-          {% elif num > page_object.number|add:'-3' and num < page_object.number|add:'3' %}
-            <a class="nums_page" href="?page={{ num }}">{{ num }}</a>
-          {% endif %}
-        {% endfor %}
-  
-        {% if page_object.has_next %}
-          <a class="next_page" href="?page={{ page_object.next_page_number }}">
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-          </a>
-          <a class="last_page" href="?page={{ page_object.paginator.num_pages }}">Последняя</a>
-        {% endif %}
-      {% endif %}
-    </div>
   </div>
+  <div class="items row">
+    {% for product in products %}
+    <div class="col-lg-4 col-sm-6 mb-3">
+      <div class="product-card">
+        <div class="product-thumb">
+          <a href="{{ product.get_absolute_url }}">
+            <img
+              src="{% if product.image %}{{ product.image.url }}{% else %}{% static 'images/no-image.jpeg'%}{% endif %}">
+          </a>
+        </div>
+
+        <div class="product-details">
+          <h4><a class="text-medium" href="{{ product.get_absolute_url }}?next={{request.path}}">
+              {{ product.description }}
+            </a>
+          </h4>
+          <p>{{ product.name }}</p>
+          <div class="product-bottom-details d-flex justify-content-between">
+            <a href="{{ product.get_absolute_url }}">ПОДРОБНЕЙ</a>
+            <div class="product-price">
+            </div> {{ product.price }} руб.
+            <div class="product-links">
+
+
+
+              <a href="{{ product.get_absolute_url }}">
+                <i class="fa-solid fa-cart-shopping"></i>
+              </a>
+              <!-- <i class="fa-solid fa-cart-shopping"></i></a> -->
+              <!-- <a href="#"><i class="fa-regular fa-heart"></i></a> -->
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+
+
+  </div>
+
+  <div class="pagination">
+    {% if is_paginated %}
+    {% if page_object.has_previous %}
+    <a class="first_page" href="?page=1">Первая</a>
+    <a class="prev_page" href="?page={{ page_object.previous_page_number }}">
+      <i class="fa fa-angle-double-left" aria-hidden="true"></i>
+    </a>
+    {% endif %}
+
+    {% for num in page_object.paginator.page_range %}
+    {% if page_object.number == num %}
+    <a class="nums_page selected_page" href="?page={{ num }}">{{ num }}</a>
+    {% elif num > page_object.number|add:'-3' and num < page_object.number|add:'3' %} <a class="nums_page"
+      href="?page={{ num }}">{{ num }}</a>
+      {% endif %}
+      {% endfor %}
+
+      {% if page_object.has_next %}
+      <a class="next_page" href="?page={{ page_object.next_page_number }}">
+        <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+      </a>
+      <a class="last_page" href="?page={{ page_object.paginator.num_pages }}">Последняя</a>
+      {% endif %}
+      {% endif %}
+  </div>
+</div>
 {% endblock %}
-
-
-
-
-
-
-

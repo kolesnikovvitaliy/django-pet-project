@@ -27,7 +27,7 @@ from contact_form.views import create
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    # 2 path('', include('shop.urls')),
+    
     path('accounts/', include('django.contrib.auth.urls')),
     path('users/', include('users.urls', namespace='users')),
     # path('paypal/', include('paypal.standard.ipn.urls')),
@@ -39,9 +39,7 @@ urlpatterns = [
     path('feedback/', include('feedback.urls', namespace='feedback')),
     path('foto_gallery/', include('foto_gallery.urls', namespace='foto_gallery')),
     path('', include('shop.urls')),
-    # path('contact_form/', include('contact_form.urls', namespace='contact_form')),
-    # path('accounts/', include('django.contrib.auth.urls')),
-    # path('users/', include('users.urls', namespace='users')),
+    
     
 ]
 

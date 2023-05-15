@@ -1,10 +1,7 @@
-# from django.views.generic import CreateView
 from .models import Contact
 from django.conf import settings
-# from django.urls import reverse_lazy
 from django.http import HttpResponse
 from django.core.mail import get_connection, EmailMultiAlternatives
-# from .forms import ContactForm
 from django.shortcuts import render
 from django.http import HttpResponseRedirect, HttpResponseNotFound
 
@@ -31,7 +28,7 @@ def create(request):
 
 
 
-# Функция отправки сообщения
+
 
    
 

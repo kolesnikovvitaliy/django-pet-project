@@ -1,42 +1,54 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=idge">
-  <link rel="stylesheet" href="{% static "css/style.css" %}">
+  <link rel="stylesheet" href="{% static " css/style.css" %}">
   <title>django-pet-project</title>
   <style type="text/css">
-    *, ::after, ::before {
+    *,
+    ::after,
+    ::before {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
+
     body {
       font-size: 18px;
       font-family: sans-serif, serif, monospace;
       color: #212529;
     }
+
     li {
       list-style-type: none;
       position: relative;
     }
+
     a {
       text-decoration: none;
       color: #212529;
     }
-    :active, :hover, :focus {
+
+    :active,
+    :hover,
+    :focus {
       outline: 0;
       outline-offset: 0;
     }
+
     .content-section {
       line-height: 1.5;
     }
+
     .products_margin {
       margin-bottom: .5rem;
       margin-left: .1rem;
     }
+
     .page_title {
       text-align: center;
       letter-spacing: .2rem;
@@ -44,23 +56,28 @@
       color: #454545;
       border-bottom: 1px solid #dee2e6;
     }
+
     .goods_table {
       text-align: center;
       margin-bottom: .5rem;
     }
+
     .goods_table th {
       padding: 10px 0;
       border-top: 1px solid #dee2e6;
       border-bottom: 3px solid #dee2e6;
     }
-    .goods_table > tbody  > tr > td {
+
+    .goods_table>tbody>tr>td {
       padding: 5px 0;
     }
+
     .order_title {
       margin: .5rem 0;
     }
   </style>
 </head>
+
 <body>
   <div class="content-section">
     <h2 class="page_title">django-pet-project</h2>
@@ -88,24 +105,24 @@
       </thead>
       <tbody>
         {% for item in order.items.all %}
-          <tr class="row{% cycle '1' '2' %}">
-            <td>{{ item.product.name }}</td>
-            <td>{{ item.price }} руб.</td>
-            <td>{{ item.quantity }}</td>
-            <td>{{ item.get_cost }} руб.</td>
-          </tr>
+        <tr class="row{% cycle '1' '2' %}">
+          <td>{{ item.product.name }}</td>
+          <td>{{ item.price }} руб.</td>
+          <td>{{ item.quantity }}</td>
+          <td>{{ item.get_cost }} руб.</td>
+        </tr>
         {% endfor %}
       </tbody>
     </table>
     <ul class="products_margin">
       {% if order.cupon %}
-        <li>
-          Сумма без скидки: <span>  {{ order.get_total_cost_no_sale }} руб.</span>
-        </li>
-        <li>
-          "{{ order.cupon.code }}" купон на ({{ order.cupon.discount }} % ниже)
-          <span> - {{ order.get_order_discount|floatformat:"2" }} руб.</span>
-        </li>
+      <li>
+        Сумма без скидки: <span> {{ order.get_total_cost_no_sale }} руб.</span>
+      </li>
+      <li>
+        "{{ order.cupon.code }}" купон на ({{ order.cupon.discount }} % ниже)
+        <span> - {{ order.get_order_discount|floatformat:"2" }} руб.</span>
+      </li>
       {% endif %}
     </ul>
     <p>
@@ -114,13 +131,14 @@
     </p>
     <h3 class="{% if order.paid %}paid{% else %}pending{% endif %}">
       {% if order.paid == False and order.card_paid == False %}
-        Оплата при получении
+      Оплата при получении
       {% elif order.paid %}
-        Оплачен
+      Оплачен
       {% else %}
-        Не оплачен
+      Не оплачен
       {% endif %}
     </h3>
   </div>
 </body>
+
 </html>
