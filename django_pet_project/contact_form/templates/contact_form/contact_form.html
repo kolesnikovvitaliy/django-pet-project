@@ -1,46 +1,57 @@
-<form  action="{% url 'contact_form:contact_form'%}" method="post">
+<form action="{% url 'contact_form:contact_form'%}" method="post" style="margin-bottom: 25px">
     {% csrf_token %}
-    <div class="mosaic-form mosaic-form--u-il9qnfftn" id="il9qnfftn_0" data-do-form="{&quot;screen&quot;:{&quot;mode&quot;:&quot;main&quot;,&quot;anketa_id&quot;:&quot;20208904&quot;,&quot;initial_state&quot;:&quot;{\&quot;anketa_id\&quot;:\&quot;20208904\&quot;,\&quot;name\&quot;:\&quot;\u041e\u0441\u0442\u0430\u0432\u044c\u0442\u0435 \u0437\u0430\u044f\u0432\u043a\u0443 \u043d\u0430 \u0442\u043e\u0440\u0442\u0438\u043a\&quot;,\&quot;submit_name\&quot;:\&quot;\u041e\u0442\u043f\u0440\u0430\u0432\u0438\u0442\u044c\&quot;,\&quot;success_note\&quot;:\&quot;\u0421\u043f\u0430\u0441\u0438\u0431\u043e! \u0424\u043e\u0440\u043c\u0430 \u043e\u0442\u043f\u0440\u0430\u0432\u043b\u0435\u043d\u0430\&quot;,\&quot;tag_id\&quot;:\&quot;il9qnfftn\&quot;,\&quot;symbol_id\&quot;:0,\&quot;change\&quot;:false,\&quot;dictionaries\&quot;:{\&quot;ifd2rnn6i\&quot;:{\&quot;dictionary_id\&quot;:83024904,\&quot;name\&quot;:\&quot;\u0412\u0430\u0448\u0435 \u0438\u043c\u044f:\&quot;,\&quot;type_id\&quot;:\&quot;1\&quot;,\&quot;required\&quot;:false,\&quot;alias\&quot;:\&quot;field_112346451\&quot;,\&quot;note\&quot;:\&quot;\&quot;,\&quot;variants\&quot;:[],\&quot;params_value\&quot;:\&quot;\&quot;,\&quot;validator\&quot;:\&quot;\&quot;,\&quot;change\&quot;:false},\&quot;i4t4liy79\&quot;:{\&quot;dictionary_id\&quot;:83025104,\&quot;name\&quot;:\&quot;\u0422\u0435\u043b\u0435\u0444\u043e\u043d:\&quot;,\&quot;type_id\&quot;:\&quot;15\&quot;,\&quot;required\&quot;:\&quot;1\&quot;,\&quot;alias\&quot;:\&quot;phone\&quot;,\&quot;note\&quot;:\&quot;\&quot;,\&quot;variants\&quot;:[],\&quot;params_value\&quot;:\&quot;\&quot;,\&quot;validator\&quot;:\&quot;__phone__\&quot;,\&quot;change\&quot;:false},\&quot;ie9ca15kn\&quot;:{\&quot;dictionary_id\&quot;:83025304,\&quot;name\&quot;:\&quot;\u0413\u0430\u043b\u043e\u0447\u043a\u0430\&quot;,\&quot;type_id\&quot;:\&quot;7\&quot;,\&quot;required\&quot;:\&quot;1\&quot;,\&quot;alias\&quot;:\&quot;field_112347051\&quot;,\&quot;note\&quot;:\&quot;\&quot;,\&quot;variants\&quot;:[],\&quot;params_value\&quot;:\&quot;\&quot;,\&quot;validator\&quot;:\&quot;\&quot;,\&quot;change\&quot;:false}}}&quot;,&quot;nativeStyle&quot;:false,&quot;showTitleAfterSend&quot;:false,&quot;disabledNativeStyleSelect&quot;:false}}">
-    <form id="iopnfbuxo_0" class="mosaic-form__form mosaic-form__form--u-iopnfbuxo" >
-    <div id="izpayxfsw_0" class="mosaic-form__title mosaic-form__title--u-izpayxfsw">
-    <span class="text-block-wrap-div">Оставьте заявку на тортик и мы вам перезвоним</span></div>
-    <div id="itcdmutg3_0" class="div div--u-itcdmutg3">
-    <div id="ifd2rnn6i_0" data-type-field="text" data-field-position="0" class="mosaic-form__field mosaic-form__field--u-ifd2rnn6i" >
-    <div id="is25to6cv_0" class="mosaic-form__header mosaic-form__header--u-is25to6cv"></div>
-    <div id="inud8w980_0" class="mosaic-form__body mosaic-form__body--u-inud8w980">
-    <div id="ixhaugk1m_0" class="mosaic-form__icon mosaic-form__icon--u-ixhaugk1m">
-    <span id="iztpsdygm_0" class="svg_image svg_image--u-iztpsdygm"></span></div>
+    <div class="mosaic-form mosaic-form--u-il9qnfftn" id="il9qnfftn_0"
+        data-do-form="{&quot;screen&quot;:{&quot;mode&quot;:&quot;main&quot;,&quot;anketa_id&quot;:&quot;20208904&quot;,&quot;initial_state&quot;:&quot;{\&quot;anketa_id\&quot;:\&quot;20208904\&quot;,\&quot;name\&quot;:\&quot;\u041e\u0441\u0442\u0430\u0432\u044c\u0442\u0435 \u0437\u0430\u044f\u0432\u043a\u0443 \u043d\u0430 \u0442\u043e\u0440\u0442\u0438\u043a\&quot;,\&quot;submit_name\&quot;:\&quot;\u041e\u0442\u043f\u0440\u0430\u0432\u0438\u0442\u044c\&quot;,\&quot;success_note\&quot;:\&quot;\u0421\u043f\u0430\u0441\u0438\u0431\u043e! \u0424\u043e\u0440\u043c\u0430 \u043e\u0442\u043f\u0440\u0430\u0432\u043b\u0435\u043d\u0430\&quot;,\&quot;tag_id\&quot;:\&quot;il9qnfftn\&quot;,\&quot;symbol_id\&quot;:0,\&quot;change\&quot;:false,\&quot;dictionaries\&quot;:{\&quot;ifd2rnn6i\&quot;:{\&quot;dictionary_id\&quot;:83024904,\&quot;name\&quot;:\&quot;\u0412\u0430\u0448\u0435 \u0438\u043c\u044f:\&quot;,\&quot;type_id\&quot;:\&quot;1\&quot;,\&quot;required\&quot;:false,\&quot;alias\&quot;:\&quot;field_112346451\&quot;,\&quot;note\&quot;:\&quot;\&quot;,\&quot;variants\&quot;:[],\&quot;params_value\&quot;:\&quot;\&quot;,\&quot;validator\&quot;:\&quot;\&quot;,\&quot;change\&quot;:false},\&quot;i4t4liy79\&quot;:{\&quot;dictionary_id\&quot;:83025104,\&quot;name\&quot;:\&quot;\u0422\u0435\u043b\u0435\u0444\u043e\u043d:\&quot;,\&quot;type_id\&quot;:\&quot;15\&quot;,\&quot;required\&quot;:\&quot;1\&quot;,\&quot;alias\&quot;:\&quot;phone\&quot;,\&quot;note\&quot;:\&quot;\&quot;,\&quot;variants\&quot;:[],\&quot;params_value\&quot;:\&quot;\&quot;,\&quot;validator\&quot;:\&quot;__phone__\&quot;,\&quot;change\&quot;:false},\&quot;ie9ca15kn\&quot;:{\&quot;dictionary_id\&quot;:83025304,\&quot;name\&quot;:\&quot;\u0413\u0430\u043b\u043e\u0447\u043a\u0430\&quot;,\&quot;type_id\&quot;:\&quot;7\&quot;,\&quot;required\&quot;:\&quot;1\&quot;,\&quot;alias\&quot;:\&quot;field_112347051\&quot;,\&quot;note\&quot;:\&quot;\&quot;,\&quot;variants\&quot;:[],\&quot;params_value\&quot;:\&quot;\&quot;,\&quot;validator\&quot;:\&quot;\&quot;,\&quot;change\&quot;:false}}}&quot;,&quot;nativeStyle&quot;:false,&quot;showTitleAfterSend&quot;:false,&quot;disabledNativeStyleSelect&quot;:false}}">
+        <form id="iopnfbuxo_0" class="mosaic-form__form mosaic-form__form--u-iopnfbuxo">
+            <div id="izpayxfsw_0" class="mosaic-form__title mosaic-form__title--u-izpayxfsw">
+                <span class="text-block-wrap-div">Оставьте заявку на тортик и мы вам перезвоним</span>
+            </div>
+            <div id="itcdmutg3_0" class="div div--u-itcdmutg3">
+                <div id="ifd2rnn6i_0" data-type-field="text" data-field-position="0"
+                    class="mosaic-form__field mosaic-form__field--u-ifd2rnn6i">
+                    <div id="is25to6cv_0" class="mosaic-form__header mosaic-form__header--u-is25to6cv"></div>
+                    <div id="inud8w980_0" class="mosaic-form__body mosaic-form__body--u-inud8w980">
+                        <div id="ixhaugk1m_0" class="mosaic-form__icon mosaic-form__icon--u-ixhaugk1m">
+                            <span id="iztpsdygm_0" class="svg_image svg_image--u-iztpsdygm"></span>
+                        </div>
 
-    <input id="isy5t0p38_0" type="text" placeholder="Имя *" class="mosaic-form__text mosaic-form__text--u-isy5t0p38" name="first_name" value=""/></div>
-    <input type="hidden" id="postId" name="mail" value="admin@django-pet-project.ru">
-    <div id="ime1tey9r_0" class="mosaic-form__note mosaic-form__note--u-ime1tey9r is-removed"></div>
-    </div> 
-    <!-- ВВЕДИТЕ НОМЕР ТЕЛЕФОНА -->   
-    <div id="i4t4liy79_0" data-type-field="phone" data-field-position="1" 
-            class="mosaic-form__field mosaic-form__field--u-i4t4liy79">
-    <div id="izt9jwzs5_0" class="mosaic-form__header mosaic-form__header--u-izt9jwzs5">
-    <span id="icocqqfik_0" class="mosaic-form__name mosaic-form__name--u-icocqqfik">
-    <span class="text-block-wrap-div">Телефон:</span></span>
-    <span id="iabgrdwqp_0" class="mosaic-form__required mosaic-form__required--u-iabgrdwqp">
-    <span class="text-block-wrap-div">*</span></span></div>     
-    <div id="ikrzio2kn_0" class="mosaic-form__body mosaic-form__body--u-ikrzio2kn">
-    <div id="iyrn0xolq_0" class="mosaic-form__icon mosaic-form__icon--u-iyrn0xolq">
-    <span id="iogg5336v_0" class="svg_image svg_image--u-iogg5336v"></span></div>
-    
-    <input id="iu7owzpsi_0" type="tel" placeholder="8 (000) 000-00-00 *" class="mosaic-form__text mosaic-form__text--u-iu7owzpsi" name="fone" value=""/></div>
-    <!-- КНОПКА ОТПРАВИТЬ  -->
-    <div id="i3ukdmz9m_0" class="mosaic-form__note mosaic-form__note--u-i3ukdmz9m is-removed"></div>
-    <div id="i36n9wlsv_0" class="mosaic-form__error mosaic-form__error--u-i36n9wlsv is-removed"></div></div>
-    <div id="i79qbtqz5_0" class="div div--u-i79qbtqz5"></div>
-        
-    <button  type="submit" id="i6zpzqew9_0" class="mosaic-form__button mosaic-form__button--u-i6zpzqew9">
-    <span id="ia5fuw2ll_0" class="button__text button__text--u-ia5fuw2ll">
-    <span class="text-block-wrap-div">Отправить</span></span>
-    </button>
+                        <input id="isy5t0p38_0" type="text" placeholder="Имя *"
+                            class="mosaic-form__text mosaic-form__text--u-isy5t0p38" name="first_name" value="" />
+                    </div>
+                    <input type="hidden" id="postId" name="mail" value="admin@django-pet-project.ru">
+                    <div id="ime1tey9r_0" class="mosaic-form__note mosaic-form__note--u-ime1tey9r is-removed"></div>
+                </div>
+
+                <div id="i4t4liy79_0" data-type-field="phone" data-field-position="1"
+                    class="mosaic-form__field mosaic-form__field--u-i4t4liy79">
+                    <div id="izt9jwzs5_0" class="mosaic-form__header mosaic-form__header--u-izt9jwzs5">
+                        <span id="icocqqfik_0" class="mosaic-form__name mosaic-form__name--u-icocqqfik">
+                            <span class="text-block-wrap-div">Телефон:</span></span>
+                        <span id="iabgrdwqp_0" class="mosaic-form__required mosaic-form__required--u-iabgrdwqp">
+                            <span class="text-block-wrap-div">*</span></span>
+                    </div>
+                    <div id="ikrzio2kn_0" class="mosaic-form__body mosaic-form__body--u-ikrzio2kn">
+                        <div id="iyrn0xolq_0" class="mosaic-form__icon mosaic-form__icon--u-iyrn0xolq">
+                            <span id="iogg5336v_0" class="svg_image svg_image--u-iogg5336v"></span>
+                        </div>
+
+                        <input id="iu7owzpsi_0" type="tel" placeholder="8 (000) 000-00-00 *"
+                            class="mosaic-form__text mosaic-form__text--u-iu7owzpsi" name="fone" value="" />
+                    </div>
+
+                    <div id="i3ukdmz9m_0" class="mosaic-form__note mosaic-form__note--u-i3ukdmz9m is-removed"></div>
+                    <div id="i36n9wlsv_0" class="mosaic-form__error mosaic-form__error--u-i36n9wlsv is-removed"></div>
+                </div>
+                <div id="i79qbtqz5_0" class="div div--u-i79qbtqz5"></div>
+
+                <button type="submit" id="i6zpzqew9_0" class="mosaic-form__button mosaic-form__button--u-i6zpzqew9">
+                    <span id="ia5fuw2ll_0" class="button__text button__text--u-ia5fuw2ll">
+                        <span class="text-block-wrap-div">Отправить</span></span>
+                </button>
+            </div>
+    </div>
+    </div>
+</form>
 </div>
-    </div>
-    </div>
-    </form>
-    </div>
-    <!-- <input type="submit"> -->
+
 </form>

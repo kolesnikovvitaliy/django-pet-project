@@ -36,7 +36,6 @@ class Product(models.Model):
     )
     name = models.CharField(max_length=100, db_index=True, verbose_name="Название")
     slug = models.SlugField(max_length=100, db_index=True)
-    #description = models.TextField(blank=True, verbose_name="Описание")  # Empty value
     features = models.TextField(blank=True, verbose_name="Характеристики")  # Empty value
     price = models.DecimalField(max_digits=10, decimal_places=2,
                                 verbose_name="Цена")

@@ -42,7 +42,7 @@ def payment_done(request):
     connection = get_connection()
     connection.open()
 
-    subject = 'django-pet-project - Заказ номер {} оформлен'.format(order.id)
+    subject = 'TORTIKI-TAGANROG - Заказ номер {} оформлен'.format(order.id)
     message = render_to_string('orders/order/mail.txt',
                                {'order': order})
     html_content = render_to_string('orders/order/mail.html',

@@ -1,7 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from django.core.paginator import Paginator
 from django.db.models import Q
-from django.core.mail import send_mail
 from .models import Category, Product
 from cart.forms import CartAddProductForm
 from django.http import HttpResponse
@@ -61,12 +60,6 @@ def product_detail(request, id, slug):
     return render(request, 'shop/product/detail.html', context)
 
 def home(request):
-    if request.method == 'POST':
-        # foto_1 = request.POST.get('image')
-        data = request.POST.dict()
-        subject = f'Сообщение с формы от {data.get("first_name")} Телефон отправителя:'
-        context = {}
-        email(subject, f'{data.get("fone")}')
     categories = Category.objects.all()
     list_foto = [{'imag':'54865518_2.jpg','nam':'Фруктовый'},
                 {'imag':'54857587_2.jpg','nam':'Для девочек'},
@@ -75,25 +68,6 @@ def home(request):
                 {'imag':'54882693_2.jpg','nam':'Десерты'},
                 {'imag':'54712265_3.jpg','nam':'Рулетики'},]
     return render(request, 'shop/home.html', locals(),)
-
-
-def base(request):
-    categories = Category.objects.all()
-    return render(request, 'shop/base.html', locals())
-
-def test(request):
-    categories = Category.objects.all()
-    return render(request, 'shop/test.html', locals())
-
-def foto(request):
-    categories = Category.objects.all()
-    # list_foto = [{'imag':'54865518_2.jpg','nam':'Фруктовый'},
-    #             {'imag':'54857587_2.jpg','nam':'Для девочек'},
-    #             {'imag':'54883095_2.jpg','nam':'Десерт'},
-    #             {'imag':'54868104_2.jpg','nam':'Свадебный'},
-    #             {'imag':'54882693_2.jpg','nam':'Десерты'},
-    #             {'imag':'54856384_2.jpg','nam':'Рулетики'},]
-    return render(request, 'shop/include/foto.html', locals())
 
 def oplata(request):
     categories = Category.objects.all()
@@ -104,23 +78,3 @@ def contacts(request):
     return render(request, 'shop/include/contacts.html', locals())
 
 
-# def form_valid(self, form):
-#         # Формируем сообщение для отправки
-#         data = form.data
-        # subject = f'Сообщение с формы от {data["first_name"]} Телефон отправителя: {data["email"]}'
-        # email(subject)
-        # return super().form_valid(form)
-
-
-# Функция отправки сообщения
-def email(subject, content):
-   send_mail(subject,
-      content,
-      'settings.EMAIL_HOST_USER',
-      ['admin@django-pet-project.ru']
-   )
-   return HttpResponse('Письмо отправлено!')
-
-# Функция, которая вернет сообщение в случае успешного заполнения формы
-# def success(request):
-#    return HttpResponse('Письмо отправлено!')

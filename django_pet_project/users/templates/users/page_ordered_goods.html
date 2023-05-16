@@ -2,39 +2,39 @@
 
 {% load static %}
 {% block content %}
-  <div class="content-section">
-    <h3 class="back_button">
-      <a href="{{request.META.HTTP_REFERER}}">Назад</a>
-    </h3>
-    <h4 class="goods_title">Список заказов</h4>
-    <table class="goods_table">
-      <h3 class="goods_title">Заказанные товары</h3>
-      <thead>
-        <tr>
-          <th>Изображение</th>
-          <th>Название товара</th>
-          <th>Кол.</th>
-          <th>Дата заказа</th>
-        </tr>
-      </thead>
-      <tbody>
-        {% for order in orders %}
-          {% for item in order.items.all %}
-            <tr class="row{% cycle '1' '2' %}">
-              <td>
-                <a href="{{ item.product.get_absolute_url }}">
-                  <img src="{% if item.product.image %}
-                  {{ item.product.image.url }}{% else %}
-                  {% static 'images/no-image.jpeg'%}{% endif %}">
-                </a>
-              </td>
-              <td>{{ item.product.name }}</td>
-              <td>{{ item.quantity }}</td>
-              <td>{{ item.order.created }}</td>
-            </tr>
-          {% endfor %}
-        {% endfor %}
-      </tbody>
-    </table>
-  </div>
+<div class="content-section">
+  <h3 class="back_button">
+    <a href="{{request.META.HTTP_REFERER}}">Назад</a>
+  </h3>
+  <h4 class="goods_title">Список заказов</h4>
+  <table class="goods_table">
+    <h3 class="goods_title">Заказанные товары</h3>
+    <thead>
+      <tr>
+        <th>Изображение</th>
+        <th>Название товара</th>
+        <th>Кол.</th>
+        <th>Дата заказа</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for order in orders %}
+      {% for item in order.items.all %}
+      <tr class="row{% cycle '1' '2' %}">
+        <td>
+          <a href="{{ item.product.get_absolute_url }}">
+            <img src="{% if item.product.image %}
+                            {{ item.product.image.url }}{% else %}
+                            {% static 'images/no-image.jpeg'%}{% endif %}">
+          </a>
+        </td>
+        <td>{{ item.product.name }}</td>
+        <td>{{ item.quantity }}</td>
+        <td>{{ item.order.created }}</td>
+      </tr>
+      {% endfor %}
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
 {% endblock content %}

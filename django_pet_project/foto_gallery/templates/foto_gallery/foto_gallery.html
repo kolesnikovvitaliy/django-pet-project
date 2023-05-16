@@ -1,98 +1,107 @@
 {% extends 'shop/base.html' %}
 {% load static %}
 
-            {% block title %}
+{% block title %}
 
-            ФОТОГАЛЕРЕЯ
-            {% endblock %}
-       
-        {% block content %}
+ФОТОГАЛЕРЕЯ
+{% endblock %}
 
-                  <h1>ФОТОГАЛЕРЕЯ</h1>
-                  
+{% block content %}
 
-    <div class="list list--u-in0ffulxc" id="in0ffulxc_0">
-        
-    {% for data in list_foto %}
-    
-    <div class="list__item list__item--u-i2rbz5wz3" id="i2rbz5wz3_5">
-    <div class="imageFit imageFit--u-i6tsask43 photo-swipe-image-nc cursor-pointer" id="i6tsask43_5" data-do-image="{&quot;screen&quot;:{&quot;objectFit&quot;:&quot;cover&quot;,&quot;lockRatio&quot;:true,&quot;maxHeight&quot;:1920,&quot;maxWidth&quot;:1920,&quot;zoomOnClick&quot;:true,&quot;scrollZoom&quot;:true}}">
+<h1>ФОТОГАЛЕРЕЯ</h1>
 
-    <img src="{{ data.image.url }}" alt="54856384_2" title="" class="imageFit__img imageFit__img--u-imetyexti" id="imetyexti_5">
-    
-    <div class="imageFit__overlay imageFit__overlay--u-iwx7z4jz4" id="iwx7z4jz4_5">
-    <span class="svg_image svg_image--u-il0x8qz8n" id="il0x8qz8n_5" data-do-svg_image="{&quot;screen&quot;:{&quot;stretch&quot;:true}}">
-       
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-        <svg xmlns="http://www.w3.org/2000/svg" width="22.844" height="23.219" viewBox="0 0 22.844 23.219" data-prefix="ia1nzjzwo">
-        <path d="M22.541 22.937a1 1 0 0 1-1.414 0l-5.091-5.088a9.982 9.982 0 1 1 1.454-1.373l5.051 5.048a1 1 0 0 1 0 1.413zM9.955 2a7.966 7.966 0 1 0 7.97 7.968A7.982 7.982 0 0 0 9.955 2zM4.348 9.965h-1a6.614 6.614 0 0 1 6.607-6.6v1a5.613 5.613 0 0 0-5.607 5.603z" fill-rule="evenodd" class="path-ida8cj9d1"></path></svg>
-        </button>
-    
-    </span>
-    </div>
-    
-    <div class="imageFit__zoom imageFit__zoom--u-i1qe8weph" id="i1qe8weph_5">
-    
-    <span class="svg_image svg_image--u-i1wgkuryx" id="i1wgkuryx_5" data-do-svg_image="{&quot;screen&quot;:{&quot;stretch&quot;:true}}">
-    </span>
-    </div>
-    </div>
-    
-    </div>
-    {% endfor %}
 
-    </div>
-    </div>
-    
-    
+<div class="list list--u-in0ffulxc" id="in0ffulxc_0">
 
-   
-   
-  
-  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog modal-xl">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-5" id="staticBackdropLabel">НАША ПРОДУКЦИЯ нажимайте вправо чтобы листать  </h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
-            {% for data in list_foto %}
-            <div class="carousel-inner">
-             
-              <div class="carousel-item active">
+  {% for data in list_foto %}
+
+  <div class="list__item list__item--u-i2rbz5wz3" id="i2rbz5wz3_5">
+    <div class="imageFit imageFit--u-i6tsask43 photo-swipe-image-nc cursor-pointer" id="i6tsask43_5"
+      data-do-image="{&quot;screen&quot;:{&quot;objectFit&quot;:&quot;cover&quot;,&quot;lockRatio&quot;:true,&quot;maxHeight&quot;:1920,&quot;maxWidth&quot;:1920,&quot;zoomOnClick&quot;:true,&quot;scrollZoom&quot;:true}}">
+
+      <img src="{{ data.image.url }}" alt="54856384_2" title="" class="imageFit__img imageFit__img--u-imetyexti"
+        id="imetyexti_5">
+
+      <div class="imageFit__overlay imageFit__overlay--u-iwx7z4jz4" id="iwx7z4jz4_5">
+        <span class="svg_image svg_image--u-il0x8qz8n" id="il0x8qz8n_5"
+          data-do-svg_image="{&quot;screen&quot;:{&quot;stretch&quot;:true}}">
+
+          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22.844" height="23.219" viewBox="0 0 22.844 23.219"
+              data-prefix="ia1nzjzwo">
+              <path
+                d="M22.541 22.937a1 1 0 0 1-1.414 0l-5.091-5.088a9.982 9.982 0 1 1 1.454-1.373l5.051 5.048a1 1 0 0 1 0 1.413zM9.955 2a7.966 7.966 0 1 0 7.97 7.968A7.982 7.982 0 0 0 9.955 2zM4.348 9.965h-1a6.614 6.614 0 0 1 6.607-6.6v1a5.613 5.613 0 0 0-5.607 5.603z"
+                fill-rule="evenodd" class="path-ida8cj9d1"></path>
+            </svg>
+          </button>
+
+        </span>
+      </div>
+
+      <div class="imageFit__zoom imageFit__zoom--u-i1qe8weph" id="i1qe8weph_5">
+
+        <span class="svg_image svg_image--u-i1wgkuryx" id="i1wgkuryx_5"
+          data-do-svg_image="{&quot;screen&quot;:{&quot;stretch&quot;:true}}">
+        </span>
+      </div>
+    </div>
+
+  </div>
+  {% endfor %}
+
+</div>
+</div>
+
+
+
+
+
+
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+  aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">НАША ПРОДУКЦИЯ</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+          {% for data in list_foto %}
+          <div class="carousel-inner">
+
+            <div class="carousel-item active">
               <img src="{{ data.image.url }}" class="d-block w-100" alt="{{ data.name_ }}">
-              </div> 
-              
             </div>
-            {% endfor %}
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" color="black" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
-            </button>
+
           </div>
+          {% endfor %}
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" color="black" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
         </div>
-        <div class="modal-footer">
-            <!-- <input type="hidden" name="image" value="{{ data.imag }}"> -->
-          <button type="submit" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        </div>
+      </div>
+      <div class="modal-footer">
+        <!-- <input type="hidden" name="image" value="{{ data.imag }}"> -->
+        <button type="submit" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
-  
-               
-       
-        
-            <!-- <input type="hidden" name="image" value="{{ data.imag }}"> -->
+</div>
+
+
+
+
+<!-- <input type="hidden" name="image" value="{{ data.imag }}"> -->
 <form action="{% url 'shop:home' %}">
 
-<button type="submit" class="btn btn-secondary" data-bs-dismiss="modal">Главная</button>
+  <button type="submit" class="btn btn-secondary" data-bs-dismiss="modal">Главная</button>
 </form>
 {% endblock %}
-
-

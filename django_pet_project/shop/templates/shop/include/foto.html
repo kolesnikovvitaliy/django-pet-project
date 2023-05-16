@@ -1,100 +1,118 @@
 {% load static %}
-<div class="section section--u-ifnb54wrw" id="ifnb54wrw_0" data-do-section="{&quot;screen&quot;:{&quot;scroll&quot;:false,&quot;smooth&quot;:true}}">
-    <div class="imageFit imageFit--u-iv8mktuk4 photo-swipe-image-nc" id="iv8mktuk4_0" data-do-image="{&quot;screen&quot;:{&quot;objectFit&quot;:&quot;contain&quot;,&quot;lockRatio&quot;:true}}">
-    <img src="{% static 'images/gallery2.png' %}" alt="Gallery2" title="" class="imageFit__img imageFit__img--u-ignl9sb85" id="ignl9sb85_0">
+<div class="section section--u-ifnb54wrw" id="ifnb54wrw_0"
+  data-do-section="{&quot;screen&quot;:{&quot;scroll&quot;:false,&quot;smooth&quot;:true}}">
+  <div class="imageFit imageFit--u-iv8mktuk4 photo-swipe-image-nc" id="iv8mktuk4_0"
+    data-do-image="{&quot;screen&quot;:{&quot;objectFit&quot;:&quot;contain&quot;,&quot;lockRatio&quot;:true}}">
+    <img src="{% static 'images/gallery2.png' %}" alt="Gallery2" title=""
+      class="imageFit__img imageFit__img--u-ignl9sb85" id="ignl9sb85_0">
     <div class="imageFit__overlay imageFit__overlay--u-i9agx354j" id="i9agx354j_0"></div>
     <div class="imageFit__zoom imageFit__zoom--u-idbvscb4d" id="idbvscb4d_0">
-    <span class="svg_image svg_image--u-iudsgs18p" id="iudsgs18p_0" data-do-svg_image="{&quot;screen&quot;:{&quot;stretch&quot;:true}}">
-    
-    </span>
+      <span class="svg_image svg_image--u-iudsgs18p" id="iudsgs18p_0"
+        data-do-svg_image="{&quot;screen&quot;:{&quot;stretch&quot;:true}}">
+
+      </span>
     </div>
-    </div>
-    <div class="container container--u-iyp6rym6u" id="iyp6rym6u_0">
+  </div>
+  <div class="container container--u-iyp6rym6u" id="iyp6rym6u_0">
     <div class="div div--u-i06jka86v" id="i06jka86v_0">
-    <div class="heading heading--u-i7knlmoqi" id="i7knlmoqi_0">
-    <span class="text-block-wrap-div">Посмотрите на наши работы</span>
-    </div>
-    <div class="text text--u-izgwae5xl" id="izgwae5xl_0">
-    <span class="text-block-wrap-div">Наша продукция (сласти, сладости, сладкие блюда) - высококалорийные и легкоусваиваемые пищевые продукты с большим содержанием сахара, отличающиеся приятным вкусом и ароматом.</span>
-    </div>
-    </div>
-    </div>
-    <div class="list list--u-in0ffulxc" id="in0ffulxc_0">
-        
-    {% for data in list_foto %}
-    
-    <div class="list__item list__item--u-i2rbz5wz3" id="i2rbz5wz3_5">
-    <div class="imageFit imageFit--u-i6tsask43 photo-swipe-image-nc cursor-pointer" id="i6tsask43_5" data-do-image="{&quot;screen&quot;:{&quot;objectFit&quot;:&quot;cover&quot;,&quot;lockRatio&quot;:true,&quot;maxHeight&quot;:1920,&quot;maxWidth&quot;:1920,&quot;zoomOnClick&quot;:true,&quot;scrollZoom&quot;:true}}">
-
-    <img src="static/images/{{ data.imag }}" alt="54856384_2" title="" class="imageFit__img imageFit__img--u-imetyexti" id="imetyexti_5">
-    
-    <div class="imageFit__overlay imageFit__overlay--u-iwx7z4jz4" id="iwx7z4jz4_5">
-    <div class="text text--u-i86yf1xsh" id="i86yf1xsh_5">
-    <span class="text-block-wrap-div">{{ data.nam }}</span>
-    </div>
-    <span class="svg_image svg_image--u-il0x8qz8n" id="il0x8qz8n_5" data-do-svg_image="{&quot;screen&quot;:{&quot;stretch&quot;:true}}">
-       
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-        <svg xmlns="http://www.w3.org/2000/svg" width="22.844" height="23.219" viewBox="0 0 22.844 23.219" data-prefix="ia1nzjzwo">
-        <path d="M22.541 22.937a1 1 0 0 1-1.414 0l-5.091-5.088a9.982 9.982 0 1 1 1.454-1.373l5.051 5.048a1 1 0 0 1 0 1.413zM9.955 2a7.966 7.966 0 1 0 7.97 7.968A7.982 7.982 0 0 0 9.955 2zM4.348 9.965h-1a6.614 6.614 0 0 1 6.607-6.6v1a5.613 5.613 0 0 0-5.607 5.603z" fill-rule="evenodd" class="path-ida8cj9d1"></path></svg>
-        </button>
-    
-    </span>
-    </div>
-    
-    <div class="imageFit__zoom imageFit__zoom--u-i1qe8weph" id="i1qe8weph_5">
-    
-    <span class="svg_image svg_image--u-i1wgkuryx" id="i1wgkuryx_5" data-do-svg_image="{&quot;screen&quot;:{&quot;stretch&quot;:true}}">
-    </span>
-    
-    </div>
-    
-    </div>
-    
-    </div>
-    {% endfor %}
-
-    </div>
-    </div>
-    
-
-   
-   
-  
-  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog modal-xl">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-5" id="staticBackdropLabel">НАША ПРОДУКЦИЯ нажимайте вправо чтобы листать  </h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-              {% for data in list_foto %}
-              <div class="carousel-item active">
-              <img src="static/images/{{ data.imag }}" class="d-block w-100" alt="{{ data.nam }}">
-              </div> 
-              {% endfor %}         
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" color="black" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
-            </button>
-          </div>
-        
-        
-        
-        </div>
-        <div class="modal-footer">
-            <!-- <input type="hidden" name="image" value="{{ data.imag }}"> -->
-          <button type="submit" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        </div>
+      <div class="heading heading--u-i7knlmoqi" id="i7knlmoqi_0">
+        <span class="text-block-wrap-div">Посмотрите на наши работы</span>
+      </div>
+      <div class="text text--u-izgwae5xl" id="izgwae5xl_0">
+        <span class="text-block-wrap-div">Наша продукция (сласти, сладости, сладкие блюда) - высококалорийные и
+          легкоусваиваемые пищевые продукты с большим содержанием сахара, отличающиеся приятным вкусом и
+          ароматом.</span>
       </div>
     </div>
   </div>
-  
+  <div class="list list--u-in0ffulxc" id="in0ffulxc_0">
+
+    {% for data in list_foto %}
+
+    <div class="list__item list__item--u-i2rbz5wz3" id="i2rbz5wz3_5">
+      <div class="imageFit imageFit--u-i6tsask43 photo-swipe-image-nc cursor-pointer" id="i6tsask43_5"
+        data-do-image="{&quot;screen&quot;:{&quot;objectFit&quot;:&quot;cover&quot;,&quot;lockRatio&quot;:true,&quot;maxHeight&quot;:1920,&quot;maxWidth&quot;:1920,&quot;zoomOnClick&quot;:true,&quot;scrollZoom&quot;:true}}">
+
+        <img src="static/images/{{ data.imag }}" alt="54856384_2" title=""
+          class="imageFit__img imageFit__img--u-imetyexti" id="imetyexti_5">
+
+        <div class="imageFit__overlay imageFit__overlay--u-iwx7z4jz4" id="iwx7z4jz4_5">
+          <div class="text text--u-i86yf1xsh" id="i86yf1xsh_5">
+            <span class="text-block-wrap-div">{{ data.nam }}</span>
+          </div>
+          <span class="svg_image svg_image--u-il0x8qz8n" id="il0x8qz8n_5"
+            data-do-svg_image="{&quot;screen&quot;:{&quot;stretch&quot;:true}}">
+
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22.844" height="23.219" viewBox="0 0 22.844 23.219"
+                data-prefix="ia1nzjzwo">
+                <path
+                  d="M22.541 22.937a1 1 0 0 1-1.414 0l-5.091-5.088a9.982 9.982 0 1 1 1.454-1.373l5.051 5.048a1 1 0 0 1 0 1.413zM9.955 2a7.966 7.966 0 1 0 7.97 7.968A7.982 7.982 0 0 0 9.955 2zM4.348 9.965h-1a6.614 6.614 0 0 1 6.607-6.6v1a5.613 5.613 0 0 0-5.607 5.603z"
+                  fill-rule="evenodd" class="path-ida8cj9d1"></path>
+              </svg>
+            </button>
+
+          </span>
+        </div>
+
+        <div class="imageFit__zoom imageFit__zoom--u-i1qe8weph" id="i1qe8weph_5">
+
+          <span class="svg_image svg_image--u-i1wgkuryx" id="i1wgkuryx_5"
+            data-do-svg_image="{&quot;screen&quot;:{&quot;stretch&quot;:true}}">
+          </span>
+
+        </div>
+
+      </div>
+
+    </div>
+    {% endfor %}
+
+  </div>
+</div>
+
+
+
+
+
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+  aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">НАША ПРОДУКЦИЯ </h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+          {% for data in list_foto %}
+          <div class="carousel-inner">
+
+            <div class="carousel-item active">
+              <img src="static/images/{{ data.imag }}" class="d-block w-100" alt="{{ data.nam }}">
+            </div>
+
+          </div>
+          {% endfor %}
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" color="black" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+
+
+
+      </div>
+      <div class="modal-footer">
+        <!-- <input type="hidden" name="image" value="{{ data.imag }}"> -->
+        <button type="submit" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
