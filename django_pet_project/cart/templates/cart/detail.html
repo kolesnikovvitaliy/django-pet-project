@@ -4,109 +4,106 @@
 {% load crispy_forms_tags %}
 
 {% block title %}
-Ваша корзина товаров
+  Ваша корзина товаров
 {% endblock %}
 
 {% block content %}
 
 <div class="container">
     <div class="row" style="margin-top: 4%">
-        <table class="table table-dark table-hover">
-            <thead>
-                <tr>
+    <table class="table table-dark table-hover">
+        <thead>
+          <tr>
+            
+            <th scope="col">Изображение</th>
+            <th scope="col">№</th>
+            <th scope="col">Товар</th>
+            <th scope="col">Кол-во</th>
+            <th scope="col">Удалить</th>
+            <th scope="col">Цена одного товара</th>
+            <th scope="col">КУПОН</th>
+            {% if cart.cupon and cart.cupon.active and cart.cupon.valid_to %}
+            <th scope="col">СКИДКА -{{ cart.cupon.discount }}%</th>
+            <th scope="col">ИГОГО со СКИДКОЙ </th>
+            {% else %}
+            <th scope="col">ИГОГО</th>
+            {% endif %}
+          </tr>
+        </thead>
+        <tbody>
+            {% for item in cart %}
+                {% with product=item.product  %}
 
-                    <th scope="col">Изображение</th>
-                    <th scope="col">№</th>
-                    <th scope="col">Товар</th>
-                    <th scope="col">Кол-во</th>
-                    <th scope="col">Удалить</th>
-                    <th scope="col">Цена одного товара</th>
-                    <th scope="col">КУПОН</th>
-                    {% if cart.cupon and cart.cupon.active and cart.cupon.valid_to %}
-                    <th scope="col">СКИДКА -{{ cart.cupon.discount }}%</th>
-                    <th scope="col">ИГОГО со СКИДКОЙ </th>
-                    {% else %}
-                    <th scope="col">ИГОГО</th>
-                    {% endif %}
-                </tr>
-            </thead>
-            <tbody>
-                {% for item in cart %}
-                {% with product=item.product %}
-
-                <tr>
-
-                    <th scope="row">
-                        <a href="{{ product.get__absolute_url }}">
-                            <img src="{% if product.image %} {{ product.image.url }} {% else %} {% static 'img/default.jpg' %} {% endif %}"
-                                alt="..." style="height: 130px; width: auto">
+                    <tr>
+                        
+                        <th scope="row">
+                            <a href="{{ product.get__absolute_url }}">
+                                <img src="{% if product.image %} {{ product.image.url }} {% else %} {% static 'img/default.jpg' %} {% endif %}" alt="..." style="height: 130px; width: auto">
                         </a>
-                    </th>
-                    <td style="width: 15px;">{{ forloop.counter }}</td>
-                    <td>{{ product.name }}</td>
-                    <td>
-                        <form action="{% url " cart:cart_add" product.id %}" method="post">
+                        </th>
+                        <td style="width: 15px;">{{ forloop.counter }}</td>
+                        <td>{{ product.name }}</td>
+                        <td>
+                        <form action="{% url "cart:cart_add" product.id %}" method="post">
                             {% csrf_token %}
-                            <span style="display:inline-block">
+                            <span style="display:inline-block">    
                                 {{ item.update_quantity_form.quantity }}
                                 {{ item.update_quantity_form.update }}
-                                <input type="submit" value="Изменить" class="btn btn-outline-info"
-                                    style="margin-top:-1%;">
+                                <input type="submit" value="Изменить" class="btn btn-outline-info"style="margin-top:-1%;">
                             </span>
                         </form>
-                    </td>
-                    <td>
-                        <a href="{% url 'cart:cart_remove' product.id %}">Удалить</a>
-                    </td>
-                    <td> {{ item.price }}</td>
-                    <td>
-                        <form action="{% url 'cupon:apply' %}" method="post" class="add">
+                        </td>
+                        <td>
+                            <a href="{% url 'cart:cart_remove' product.id %}">Удалить</a>
+                        </td>
+                        <td> {{ item.price }}</td>
+                        <td><form action="{% url 'cupon:apply' %}" method="post" class="add">
                             {% csrf_token %}
                             <fieldset class="form-group">
-
-                                <!-- {{ cupon_apply_form|join:"" }} -->
-                                {{ cupon_apply_form|crispy }}
+                             
+                             <!-- {{ cupon_apply_form|join:"" }} -->
+                              {{ cupon_apply_form|crispy }}
                             </fieldset>
-
+                        
                             <div class="form-group button_section">
-                                <input class="button_base blue_button" type="submit" value="Применить">
+                              <input class="button_base blue_button" type="submit" value="Применить">
                             </div>
-                        </form>
-
-                    </td>
-                    {% if cart.cupon and cart.cupon.active and cart.cupon.valid_to %}
-                    <td> -{{ cart.get_discount|floatformat:"2" }} </td>
-                    <td>{{ cart.get_total_price_after_discount|floatformat:"2" }}</td>
-                    {% else %}
-                    <td>{{ cart.get_total_price }}</td>
-                    {% endif %}
-
-                </tr>
+                          </form>
+                          
+                        </td>
+                        {% if cart.cupon and cart.cupon.active and cart.cupon.valid_to %}
+                        <td> -{{ cart.get_discount|floatformat:"2" }} </td>
+                        <td>{{ cart.get_total_price_after_discount|floatformat:"2" }}</td>
+                        {% else %}
+                        <td>{{ cart.get_total_price }}</td>
+                        {% endif %}
+                
+                    </tr>
                 {% endwith %}
-                {% endfor %}
-                <tr>
-                    <td><b>Суммa:</b></td>
-                    {% if cart.cupon and cart.cupon.active and cart.cupon.valid_to %}
-                    <td colspan="7"></td>
-                    <td colspan="num"><b></b>{{ cart.get_total_price_after_discount|floatformat:"2" }}</b></td>
-                    {% else %}
-                    <td colspan="6"></td>
-                    <td colspan="num"><b> {{ cart.get_total_price }}</b></td>
-                    {% endif %}
+            {% endfor %}
+            <tr>
+                <td><b>Суммa:</b></td>
+                {% if cart.cupon and cart.cupon.active and cart.cupon.valid_to %}
+                <td colspan="7"></td>
+                <td colspan="num"><b></b>{{ cart.get_total_price_after_discount|floatformat:"2" }}</b></td>
+                {% else %}
+                <td colspan="6"></td>
+                <td colspan="num"><b> {{ cart.get_total_price }}</b></td>
+                {% endif %}
 
-
-                </tr>
-
+                
+            </tr>
+            
+        </tbody>
+      </table>
+            
             </tbody>
         </table>
-
-        </tbody>
-        </table>
-        <p class="text-right">
-            <a href="{% url 'shop:product_list' %}" class="btn btn-default">Продолжить покупку</a>
-            <a href="{% url 'orders:order_create' %}" class="btn btn-primary">Оформить заказ</a>
-        </p>
-
+    <p class="text-right">
+        <a href="{% url 'shop:product_list' %}" class="btn btn-default">Продолжить покупку</a>
+        <a href="{% url 'orders:order_create' %}" class="btn btn-primary">Оформить заказ</a>
+    </p>
+    
     </div>
 </div>
 

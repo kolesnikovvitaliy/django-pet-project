@@ -1,63 +1,57 @@
-<div class="section section--u-irwdh9rff" id="irwdh9rff_0"
-    data-do-section="{&quot;screen&quot;:{&quot;scroll&quot;:false,&quot;smooth&quot;:true}}">
+<div class="section section--u-irwdh9rff" id="irwdh9rff_0" data-do-section="{&quot;screen&quot;:{&quot;scroll&quot;:false,&quot;smooth&quot;:true}}">
     <div class="container container--u-i6k43wd8g" id="i6k43wd8g_0">
-        <div class="div div--u-ivc0m2ox3" id="ivc0m2ox3_0">
-            <div class="heading heading--u-i50hbrrn7" id="i50hbrrn7_0">
-                <span class="text-block-wrap-div">У нас вы можете заказать</span>
-            </div>
-            <div class="text text--u-icpci4k9t" id="icpci4k9t_0">
-                <span class="text-block-wrap-div">от простых пирожных до больших свадебных тортов</span>
-            </div>
-        </div>
-
-        <div class="container container--u-i6k43wd8g" id="i6k43wd8g_0">
-            <div class="list list--u-icqaob7gz" id="icqaob7gz_1">
-
-                {% for category in categories reversed %}
-
-                <div class="list__item list__item--u-ihcjmg3bn" id="ihcjmg3bn_1">
-                    <div class="div div--u-i9g0h46xr" id="i9g0h46xr_1">
-                        <div class="imageFit imageFit--u-i74lvrmm1 photo-swipe-image-nc" id="i74lvrmm1_1"
-                            data-do-image="{&quot;screen&quot;:{&quot;objectFit&quot;:&quot;cover&quot;,&quot;lockRatio&quot;:true}}">
-                            <img src="media/{{ category.images }}" alt="tort" title=""
-                                class="imageFit__img imageFit__img--u-ixz7l6d3d" id="ixz7l6d3d_1">
-                            <div class="imageFit__overlay imageFit__overlay--u-i1oj0413a" id="i1oj0413a_1"></div>
-                            <div class="imageFit__zoom imageFit__zoom--u-i6yv3gcdv" id="i6yv3gcdv_1">
-                                <span class="svg_image svg_image--u-igayz90qg" id="igayz90qg_1"
-                                    data-do-svg_image="{&quot;screen&quot;:{&quot;stretch&quot;:true}}">
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="text text--u-iz9vdy4ci" id="iz9vdy4ci_1">
-                        <span class="text-block-wrap-div">{{ category.name }}</span>
-                    </div>
-                    <div class="div div--u-i6n7c7i11" id="i6n7c7i11_1">
-                        <div class="text text--u-iaq1cbwxx" id="iaq1cbwxx_1">
-                            <span class="text-block-wrap-div">от</span>
-                        </div>
-                        <div class="text text--u-i85rqgh48" id="i85rqgh48_1">
-                            <span class="text-block-wrap-div">{{ category.pris }}</span>
-                        </div>
-                        <div class="text text--u-itvspcgj6" id="itvspcgj6_1">
-                            <span class="text-block-wrap-div">руб.</span>
-                        </div>
-                    </div>
-                    <a href="{{ category.slug }}" class="link-universal link-universal--u-isast6g34" id="isast6g34_1"
-                        data-do-link_universal="{&quot;screen&quot;:{&quot;type&quot;:&quot;link&quot;,&quot;popup&quot;:&quot;iddbgru7v_0&quot;,&quot;sidepanel&quot;:false,&quot;eventName&quot;:&quot;none&quot;,&quot;eventElement&quot;:&quot;self&quot;,&quot;eventAction&quot;:&quot;&quot;,&quot;selectedTag&quot;:&quot;&quot;,&quot;linkType&quot;:&quot;link&quot;,&quot;blank&quot;:false}}">
-                        <div class="text text--u-i0oh2xm42" id="i0oh2xm42_1">
-                            <span class="text-block-wrap-div">Перейти</span>
-                        </div>
-                    </a>
-                </div>
-                {% endfor %}
-            </div>
-            <a href="list" class="link-universal link-universal--u-icrph0do5" id="icrph0do5_0"
-                data-do-link_universal="{&quot;screen&quot;:{&quot;type&quot;:&quot;link&quot;,&quot;popup&quot;:&quot;none&quot;,&quot;sidepanel&quot;:false,&quot;eventName&quot;:&quot;none&quot;,&quot;eventElement&quot;:&quot;self&quot;,&quot;eventAction&quot;:&quot;&quot;,&quot;selectedTag&quot;:&quot;&quot;,&quot;linkType&quot;:&quot;link&quot;,&quot;blank&quot;:false}}">
-                <div class="text text--u-icolxarzs" id="icolxarzs_0">
-                    <span class="text-block-wrap-div">Посмотреть весь каталог</span>
-                </div>
-            </a>
-        </div>
+    <div class="div div--u-ivc0m2ox3" id="ivc0m2ox3_0">
+    <div class="heading heading--u-i50hbrrn7" id="i50hbrrn7_0">
+    <span class="text-block-wrap-div">У нас вы можете заказать</span>
     </div>
-</div>
+    <div class="text text--u-icpci4k9t" id="icpci4k9t_0">
+    <span class="text-block-wrap-div">от простых пирожных до больших свадебных тортов</span>
+    </div>
+    </div>
+    
+    <div class="container container--u-i6k43wd8g" id="i6k43wd8g_0"> 
+    <div class="list list--u-icqaob7gz" id="icqaob7gz_1">
+    
+    {% for category in categories reversed %}    
+    
+    <div class="list__item list__item--u-ihcjmg3bn" id="ihcjmg3bn_1">
+    <div class="div div--u-i9g0h46xr" id="i9g0h46xr_1">
+    <div class="imageFit imageFit--u-i74lvrmm1 photo-swipe-image-nc" id="i74lvrmm1_1" data-do-image="{&quot;screen&quot;:{&quot;objectFit&quot;:&quot;cover&quot;,&quot;lockRatio&quot;:true}}">
+    <img src="media/{{ category.images }}" alt="tort" title="" class="imageFit__img imageFit__img--u-ixz7l6d3d" id="ixz7l6d3d_1">
+    <div class="imageFit__overlay imageFit__overlay--u-i1oj0413a" id="i1oj0413a_1"></div>
+    <div class="imageFit__zoom imageFit__zoom--u-i6yv3gcdv" id="i6yv3gcdv_1">
+    <span class="svg_image svg_image--u-igayz90qg" id="igayz90qg_1" data-do-svg_image="{&quot;screen&quot;:{&quot;stretch&quot;:true}}">
+    </span>
+    </div>
+    </div>
+    </div>
+    <div class="text text--u-iz9vdy4ci" id="iz9vdy4ci_1">
+    <span class="text-block-wrap-div">{{ category.name }}</span>
+    </div>
+    <div class="div div--u-i6n7c7i11" id="i6n7c7i11_1">
+    <div class="text text--u-iaq1cbwxx" id="iaq1cbwxx_1">
+    <span class="text-block-wrap-div">от</span>
+    </div>
+    <div class="text text--u-i85rqgh48" id="i85rqgh48_1">
+    <span class="text-block-wrap-div">{{ category.pris }}</span>
+    </div>
+    <div class="text text--u-itvspcgj6" id="itvspcgj6_1">
+    <span class="text-block-wrap-div">руб.</span>
+    </div>
+    </div>
+    <a href="{{ category.slug }}" class="link-universal link-universal--u-isast6g34" id="isast6g34_1" data-do-link_universal="{&quot;screen&quot;:{&quot;type&quot;:&quot;link&quot;,&quot;popup&quot;:&quot;iddbgru7v_0&quot;,&quot;sidepanel&quot;:false,&quot;eventName&quot;:&quot;none&quot;,&quot;eventElement&quot;:&quot;self&quot;,&quot;eventAction&quot;:&quot;&quot;,&quot;selectedTag&quot;:&quot;&quot;,&quot;linkType&quot;:&quot;link&quot;,&quot;blank&quot;:false}}">
+    <div class="text text--u-i0oh2xm42" id="i0oh2xm42_1">
+    <span class="text-block-wrap-div">Перейти</span>
+    </div>
+    </a>
+    </div>
+    {% endfor %}
+    </div>
+    <a href="list" class="link-universal link-universal--u-icrph0do5" id="icrph0do5_0" data-do-link_universal="{&quot;screen&quot;:{&quot;type&quot;:&quot;link&quot;,&quot;popup&quot;:&quot;none&quot;,&quot;sidepanel&quot;:false,&quot;eventName&quot;:&quot;none&quot;,&quot;eventElement&quot;:&quot;self&quot;,&quot;eventAction&quot;:&quot;&quot;,&quot;selectedTag&quot;:&quot;&quot;,&quot;linkType&quot;:&quot;link&quot;,&quot;blank&quot;:false}}">
+    <div class="text text--u-icolxarzs" id="icolxarzs_0">
+    <span class="text-block-wrap-div">Посмотреть весь каталог</span>
+    </div>
+    </a>
+    </div>
+    </div>
+    </div>

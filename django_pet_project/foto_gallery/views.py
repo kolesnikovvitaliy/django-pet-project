@@ -34,7 +34,7 @@ def create(request):
 #         data.fone = request.POST.get("fone")
 #         data.email = request.POST.get("mail")
 #         data.save()
-#         subject = f'TORTIKI-TAGANROG {data.id}'
+#         subject = f'django-pet-project {data.id}'
 
 #         message = f'ПОЛЬЗОВАТЕЛЬ {data.first_name} НОМЕР ТЕЛЕФОНА {data.fone} ОТПРАВИЛ ЗАПРОС НА ОБРАТЫЙ ЗВОНОК'
 #         connection = get_connection()

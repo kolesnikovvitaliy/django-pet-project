@@ -27,4 +27,4 @@
 {% endif %}
 
 Спасибо что сделали заказ, к email сообщению прикреплен PDF файл с информацией о вашем заказе.
-TORTIKI-TAGANROG
+django-pet-project

@@ -1,8 +1,8 @@
+
 <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #fa66c1;">
   <div class="container-fluid">
     <a class="navbar-brand" href="{% url 'shop:home' %}">django-pet-project</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -10,7 +10,7 @@
         <li class="nav-item">
           <a class="nav-link" href="{% url 'shop:home' %}">ГЛАВНАЯ</a>
         </li>
-
+        
         <!-- <li class="nav-item">
           <a class="nav-link" href="#">ФОТОГАЛЕРЕЯ</a>
         </li> -->
@@ -23,81 +23,81 @@
         <li class="nav-item">
           <a class="nav-link" href="{% url 'foto_gallery:foto_gallery' %}">ФОТОГАЛЕРЕЯ</a>
         </li>
-
+    
       </ul>
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-        <li class="nav-item"></li>
-        <a class="nav-link" href="tel:89920457602"> +7 0000000000 </a>
+          <li class="nav-item"></li>
+          <a class="nav-link" href="tel:89920457602">  +7 0000000000 </a>       
 
-        <li class="nav-item dropdown"></li>
-        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#"><i class="fa-regular fa-user">
-            {% if user.is_authenticated %}
-          </i><span class="navbar-text">
-            Привет, {{ user.username }}!
-          </span></a>
-        {% else %}
-        </i><span class="navbar-text">
-          Привет, Гость!
-        </span></a>
-        {% endif %}
-        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-          {% if user.is_authenticated %}
-          <li id="profile_link">
-            <a href="{% url 'users:profile' %}?next={{request.path}}">
-              <i class="fa fa-user-circle" aria-hidden="true"></i>
-              Профиль
-            </a>
+          <li class="nav-item dropdown"></li>
+              <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#"><i class="fa-regular fa-user">
+                {% if user.is_authenticated %}
+              </i><span class="navbar-text">
+                Привет, {{ user.username }}!
+              </span></a>
+                {% else %}
+              </i><span class="navbar-text">
+                Привет, Гость!
+              </span></a>
+               {% endif %}
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                {% if user.is_authenticated %}
+              <li id="profile_link">
+                <a href="{% url 'users:profile' %}?next={{request.path}}">
+                  <i class="fa fa-user-circle" aria-hidden="true"></i>
+                  Профиль
+                </a>
+              </li>
+              <li id="logout_link">
+                <a href="{% url 'logout' %}">
+                  <i class="fa fa-sign-out" aria-hidden="true"></i>
+                  Выход
+                </a>
+              </li>
+            {% else %}
+              <li>
+                <a class="color_black" href="{% url 'login' %}">
+                  <i class="fa fa-sign-in icons" aria-hidden="true"></i>
+                  Войти
+                </a>
+              </li>
+              <li>
+                <a class="color_black" href="{% url 'users:register' %}">
+                  <i class="fa fa-user-plus icons" aria-hidden="true"></i>
+                  Регистрация
+                </a>
+              </li>
+            {% endif %}
+              </ul>
           </li>
-          <li id="logout_link">
-            <a href="{% url 'logout' %}">
-              <i class="fa fa-sign-out" aria-hidden="true"></i>
-              Выход
-            </a>
-          </li>
-          {% else %}
-          <li>
-            <a class="color_black" href="{% url 'login' %}">
-              <i class="fa fa-sign-in icons" aria-hidden="true"></i>
-              Войти
-            </a>
-          </li>
-          <li>
-            <a class="color_black" href="{% url 'users:register' %}">
-              <i class="fa fa-user-plus icons" aria-hidden="true"></i>
-              Регистрация
-            </a>
-          </li>
-          {% endif %}
-        </ul>
-        </li>
-        <li class="nav-item"></li>
-        {% with total_items=cart|length %}
-        {% if cart|length > 0 %}
-        <a class="nav-link" href="{% url 'cart:cart_detail' %}">
-          <i class="fa-solid fa-cart-shopping"></i>
-          Корзина:
-          {{ total_items }} тов.
-          <span class="cart_price">{{ cart.get_total_price }} руб.</span>
-        </a>
-        {% else %}
-        <a class="nav-link" href="{% url 'cart:cart_detail' %}">
-          <i class="fa-solid fa-cart-shopping"></i>
-          Корзина пуста
-        </a>
-        {% endif %}
-        {% endwith %}
-        </li>
-        <!-- <li class="nav-item"></li>
+          <li class="nav-item"></li>
+              {% with total_items=cart|length %}
+                {% if cart|length > 0 %}
+                  <a class="nav-link" href="{% url 'cart:cart_detail' %}">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    Корзина:
+                    {{ total_items }} тов.
+                    <span class="cart_price">{{ cart.get_total_price }} руб.</span>
+                  </a>
+                {% else %}
+                  <a class="nav-link" href="{% url 'cart:cart_detail' %}" >
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    Корзина пуста
+                  </a>
+                {% endif %}
+              {% endwith %}
+              </li>
+          <!-- <li class="nav-item"></li>
               <a class="nav-link" href="{% url 'shop:home' %}"><i class="fa-solid fa-magnifying-glass"></i></a>
             </li>
           <li class="nav-item"></li>
               <a class="nav-link" href="{% url 'shop:home' %}"><i class="fa-regular fa-heart" style="color: #010409;"></i></a> -->
-        <!-- </li> -->
-
-
-
+          <!-- </li> -->
+          
+          
+      
       </ul>
-
+    
     </div>
   </div>
 </nav>
