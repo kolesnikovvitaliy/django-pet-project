@@ -54,7 +54,7 @@
 
 ### Для запуска проекта необходимо:
 
-* Создать и перейти в директорию, которую будет скопирован прект.
+* Создать и перейти в директорию, которую будет скопирован проект.
 ```bash
 mkdir django-project
 cd django-project
@@ -81,13 +81,13 @@ pip install -r requirements.txt
 
 ### Выполнить следующие команды:
 
-* Команда для создания миграций приложения для базы данных
+* Команда создания миграций приложения для базы данных
 ```bash
-python manage.py makemigrations --noinput
 python manage.py migrate --noinput
 ```
 * Команда для регистрации статистических файлов приложения 
 ```bash
+python manage.py makemigrations --noinput
 python manage.py collectstatic
 ```
 * Команда для регистрации суперпользователя базы данных - "admin". Можете заменить на желаемое.
