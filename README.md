@@ -71,14 +71,17 @@ git clone https://github.com/kolesnikovvitaliy/django-pet-project.git
 ```
 * Перейти в директорию django-pet-project
 ```bash
-cd django_pet_project
+cd django-pet-project
 ```
 
 * Установить зависимости:
 ```bash
 pip install -r requirements.txt
 ```
-
+* Перейти в директорию приложения django_pet_project
+```bash
+cd django_pet_project
+```
 ### Выполнить следующие команды:
 
 * Команда создания миграций приложения для базы данных
@@ -103,4 +106,24 @@ python manage.py runserver
 ```bash
 python manage.py makemigrations
 python manage.py migrate
+```
+## Запуск приложения с помощью docker-compose
+#### 
+* Создать и перейти в директорию, которую будет скопирован проект.
+```bash
+mkdir django-project
+cd django-project
+```
+* Скопировать репозиторий себе на локальный компьютер
+```bash
+git clone https://github.com/kolesnikovvitaliy/django-pet-project.git
+```
+* Перейти в директорию django-pet-project
+```bash
+cd django-pet-project
+```
+
+* Запустить приложение с применением docker-compose
+```bash
+docker-compose up 
 ```
