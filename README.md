@@ -116,6 +116,8 @@ python manage.py runserver
 python manage.py makemigrations
 python manage.py migrate
 ```
+> Используйте адрес: http://localhost:8000/
+
 ## Запуск приложения с помощью docker-compose
 #### 
 * Создать и перейти в директорию, которую будет скопирован проект.
@@ -136,4 +138,4 @@ cd django-pet-project
 ```bash
 docker-compose up 
 ```
-
+> Используйте адрес: http://localhost:8000/
