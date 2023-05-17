@@ -1,0 +1,36 @@
+version: '3.9'
+services:
+
+  db:
+    image: postgres:15-alpine
+    volumes:
+      - /django_pet_project_prod/postgres/db:/var/lib/postgresql/data
+    env_file:
+      - ./.env
+
+
+  nginx:
+    image: "nginx:1.15-alpine"
+    restart: always
+    volumes:
+      - ./data/nginx/conf.d:/etc/nginx/conf.d
+      - /django_pet_project_prod/static:/code/static
+      - /django_pet_project_prod/media:/code/media
+    ports:
+      - 80:80
+    depends_on:
+      - web
+
+  web:
+    image: ${REGISTRY}/django_pet_project_web:${IMAGE_TAG}
+    restart: on-failure
+    volumes:
+      - /django_pet_project_prod/static:/code/static
+      - /django_pet_project_prod/media:/code/media
+
+    expose:
+      - 8000
+    env_file:
+      - ./.env
+    depends_on:
+      - db
