@@ -75,6 +75,7 @@ cd django-project
 ```bash
 python -m venv env
 python . ./env/bin/activate
+#source ./env/bin/activate .
 ```
 * Скопировать репозиторий себе на локальный компьютер
 ```bash
@@ -135,7 +136,38 @@ git clone https://github.com/kolesnikovvitaliy/django-pet-project.git
 ```bash
 cd django-pet-project
 ```
-
+* Перейти в директорию django_pet_project/django_pet_project
+```bash
+cd django_pet_project
+cd django_pet_project
+```
+* Раскомментировать в файле settings.py
+```python
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'postgres_db',
+        'USER': 'postgres',
+        'PASSWORD': 1234,
+        'PORT' : 5432,
+        'HOST': 'db',
+        'ATOMIC_REQUESTS': True,
+    },
+}
+```
+* И закомментировать 
+```python
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.sqlite3',
+#        'NAME': BASE_DIR / 'db.sqlite3',
+#    }
+#}
+```
+* Вернуться в директорию django-pet-project
+```python
+cd ../../
+```
 * Запустить приложение с применением docker-compose
 ```bash
 docker-compose up 

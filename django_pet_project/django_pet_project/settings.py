@@ -88,18 +88,26 @@ WSGI_APPLICATION = 'django_pet_project.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
-
+# Для обычной установки
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'postgres_db',
-        'USER': 'postgres',
-        'PASSWORD': 1234,
-        'PORT' : 5432,
-        'HOST': 'db',
-        'ATOMIC_REQUESTS': True,
-    },
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
 }
+    
+# Для установки с помощью docker-compose    
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.postgresql',
+#        'NAME': 'postgres_db',
+#        'USER': 'postgres',
+#        'PASSWORD': 1234,
+#        'PORT' : 5432,
+#        'HOST': 'db',
+#        'ATOMIC_REQUESTS': True,
+#    },
+#}
 
 
 # Password validation

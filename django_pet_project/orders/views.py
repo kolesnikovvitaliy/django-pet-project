@@ -8,7 +8,7 @@ from django.core.mail import get_connection, EmailMultiAlternatives
 from io import BytesIO
 from django.views.decorators.csrf import csrf_exempt
 
-import weasyprint
+#import weasyprint
 
 from .models import OrderItem, Order
 from .forms import OrderCreateForm
@@ -62,9 +62,9 @@ def offline_paid(request, cart):
     html = render_to_string('orders/order/pdf.html',
                             {'order': order})
     out = BytesIO()
-    weasyprint.HTML(string=html).write_pdf(out,
-                            stylesheets=[weasyprint.CSS(
-                            settings.STATIC_ROOT + '/css/style.css')])  # + 'css/bootstrap.min.css'
+#    weasyprint.HTML(string=html).write_pdf(out,
+#                            stylesheets=[weasyprint.CSS(
+#                            settings.STATIC_ROOT + '/css/#style.css')])  # + 'css/bootstrap.min.css'
     msg = EmailMultiAlternatives(subject, message,
                                  settings.EMAIL_HOST_USER, [order.email],
                                  connection=connection)
@@ -92,6 +92,6 @@ def admin_order_PDF(request, order_id):
                             {'order': order})
     response = HttpResponse(content_type='application/pdf')
     response['Content-Disposition'] = 'filename=order_{}.pdf'.format(order.id)
-    weasyprint.HTML(string=html).write_pdf(response,
-               stylesheets=[weasyprint.CSS(settings.STATIC_ROOT + '/css/style.css')])  # + 'css/bootstrap.min.css'
+#    weasyprint.HTML(string=html).write_pdf(response,
+#               stylesheets=[weasyprint.CSS(settings.STATIC_ROOT #+ '/css/style.css')])  # + 'css/bootstrap.min.css'
     return response

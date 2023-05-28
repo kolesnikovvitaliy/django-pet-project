@@ -6,7 +6,7 @@ from django.views.decorators.csrf import csrf_exempt
 from paypal.standard.forms import PayPalPaymentsForm
 from django.template.loader import render_to_string
 from django.core.mail import get_connection, EmailMultiAlternatives
-import weasyprint
+#import weasyprint
 from io import BytesIO
 
 from orders.models import Order
@@ -50,9 +50,9 @@ def payment_done(request):
     html = render_to_string('orders/order/pdf.html',
                             {'order': order})
     out = BytesIO()
-    weasyprint.HTML(string=html).write_pdf(out,
-                            stylesheets=[weasyprint.CSS(
-                            settings.STATIC_ROOT + 'css/style.css')])
+#    weasyprint.HTML(string=html).write_pdf(out,
+#                            stylesheets=[weasyprint.CSS(
+#                            settings.STATIC_ROOT + 'css/#style.css')])
     msg = EmailMultiAlternatives(subject, message,
                                  settings.EMAIL_HOST_USER, [order.email],
                                  connection=connection)
